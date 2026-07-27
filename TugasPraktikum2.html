@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Praktikum 2 - Pemrograman Web STITEK</title>
+    <style>
+        /* ==========================================================================
+           4.b TEPATNYA BOX-SIZING GLOBAL & RESET
+           ========================================================================== */
+        * {
+            box-sizing: border-box; /* Memastikan padding & border tidak merusak ukuran elemen */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* ==========================================================================
+           1. TAMPILAN UMUM
+           ========================================================================== */
+        body {
+            background-color: #add8e6; /* 1.a Background halaman biru muda */
+            font-family: Arial, sans-serif; /* 1.b Menggunakan font Arial atau sans-serif */
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .main-container {
+            width: 100%;
+            max-width: 800px; /* 2.e Dibatasi maksimal lebar 800px */
+            margin: 0 auto; /* 2.e Diposisikan di tengah halaman */
+        }
+
+        h1 {
+            color: #ffffff; /* 1.c Teks berwarna putih */
+            font-size: 40px; /* 1.c Berukuran besar sekitar 40px */
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        p.deskripsi {
+            background-color: #d3d3d3; /* 1.d Latar belakang abu-abu muda */
+            color: #000000; /* 1.d Teks berwarna hitam */
+            padding: 20px; /* 1.d Padding yang cukup agar nyaman dibaca */
+            text-align: justify;
+            margin-bottom: 30px;
+            border-radius: 12px; /* 4.a Memberikan border-radius agar sudut membulat */
+            line-height: 1.6;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        /* ==========================================================================
+           2. LAYOUT KOTAK (BOX) MENGGUNAKAN GRID
+           ========================================================================== */
+        .grid-container {
+            display: grid; /* 2.d Container menggunakan CSS Grid */
+            grid-template-columns: repeat(3, 1fr); /* 2.d Terdiri dari 3 kolom yang sama besar */
+            gap: 20px; /* 2.d Jarak antar kotak sebesar 20px */
+        }
+
+        .box {
+            border: 2px solid #000000; /* 2.b Setiap kotak memiliki border hitam tebal 2px */
+            padding: 10px; /* 2.b Padding 10px */
+            height: 150px; /* 2.b Tinggi 150px */
+            border-radius: 10px; /* 4.a Berikan border-radius agar sudut kotak membulat */
+            font-weight: bold;
+            color: #333333;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        /* 2.c Pewarnaan Latar Belakang Kotak */
+        .box1 { background-color: #ff9999; } /* 2.c.1) .box1: merah muda */
+        .box2 { background-color: #99ff99; } /* 2.c.2) .box2: hijau muda */
+        .box3 { background-color: #9999ff; } /* 2.c.3) .box3: biru muda */
+
+        /* ==========================================================================
+           3. RESPONSIVE DESIGN (MEDIA QUERIES)
+           ========================================================================== */
+        
+        /* 3.a Tampilan Tablet (Lebar layar <= 768px) */
+        @media only screen and (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr); /* Container harus berubah menjadi 2 kolom */
+            }
+        }
+
+        /* 3.b & 3.c Tampilan Smartphone (Lebar layar <= 480px) */
+        @media only screen and (max-width: 480px) {
+            body {
+                padding: 20px 10px;
+            }
+            .grid-container {
+                grid-template-columns: 1fr; /* 3.b Container berubah menjadi 1 kolom */
+                gap: 15px;
+            }
+            h1 {
+                font-size: 28px; /* 3.c Ukuran font judul diperkecil menjadi 28px */
+            }
+            .box {
+                height: 120px; /* 3.c Tinggi kotak menjadi 120px */
+            }
+            p.deskripsi {
+                padding: 12px; /* 3.c Padding paragraf dikurangi agar proporsional */
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <!-- 1.c Judul Utama -->
+        <h1>Praktikum CSS</h1>
+        
+        <!-- 1.d Paragraf Deskripsi -->
+        <p class="deskripsi">
+            Ini adalah contoh implementasi halaman web dinamis yang dibuat sesuai dengan seluruh ketentuan Tugas Praktikum Modul 2 Pemrograman Web Sekolah Tinggi Teknologi Bontang (STITEK). Seluruh elemen tata letak halaman ini disusun menggunakan CSS Grid modern dan dioptimalkan agar responsif saat diakses dari berbagai resolusi gawai.
+        </p>
+
+        <!-- 2.a Container dengan kelas box1, box2, dan box3 -->
+        <div class="grid-container">
+            <div class="box box1">.box1</div>
+            <div class="box box2">.box2</div>
+            <div class="box box3">.box3</div>
+        </div>
+    </div>
+
+</body>
+</html>
